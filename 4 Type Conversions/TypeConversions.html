@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Type Conversions</title>
+</head>
+<body>
+  
+  <script>
+    //ToString
+    let value = true;
+    alert(typeof value); //boolean
+
+    value = String(value); // now value is a string "true"
+    alert(typeof value); //string
+
+    //ToNumber
+
+    //3, strings are converted to numbers
+    alert( "6" / "2" );
+
+    let str = "123";
+    alert(typeof str); //string
+
+    let num = Number(str); // becomes a number 123
+
+    alert(typeof num); // number
+
+    let age = Number("an arbitrary string instead of a number");
+    alert(age); //NaN, conversion failed
+
+    // undefined	NaN
+    // null	0
+    // true and false	1 and 0
+    // string	Whitespaces from the start and end are removed. If the remaining string is empty, the result is 0. Otherwise, the number is “read” from the string. An error gives NaN.
+
+    alert( Number("123")); //123
+    alert( Number("1233z")); // NaN (error reading a number at "z")
+    alert( Number(true)); //1
+    alert( Number(false)); //0
+
+    // Please note that null and undefined behave differently here: null becomes zero while undefined becomes NaN.
+
+    alert( Boolean(1) ); // true
+    alert( Boolean(0) ); // false
+
+    alert( Boolean("hello") ); // true
+    alert( Boolean("") ); // false
+  </script>
+</body>
+</html>
